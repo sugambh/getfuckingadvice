@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,900,700|Roboto+Condensed:400,700&amp;effect=anaglyph|shadow-multiple" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+  <div id="wrapper">
+    <h2 class=" animated fadeInDown">Add Your Advice Here</h2>
+    <div id="quotediv">
+      <h1 id="advice" class="newquote">Click (or swipe) to get some fucking advice</h1>
+    </div>
+    <h4 id="display">
+    </h4>
+    <div id="box">
+      <h4 id="source">Inspired by: <a href="http://goodfuckingdesignadvice.com">GFDA</a>.
+      Edit the javascript to add your own advice.
+      </h4>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    var quotes = ["Talk to some fucking users", " Skip that fucking conference", "Hire A-Fucking-Players", "Don't take that fucking meeting with Corp Dev", "Make sure there's money in the fucking bank", "Ship some fucking code","Look out for fucking liquidation preferences","Read the fucking fine print"," Make sure everyone's on the same fucking page","Don't worry about fucking competitors",];
+    var counter=0;
+      $( "#quotediv" ).click(function()
+       {   
+         
+           $("#advice").removeClass().html(quotes[counter]).addClass('animated flipInX');
+           var temp=counter+1;
+           $("#display").html("You have completed "+temp+" advice");
+          counter=counter+1;
+          if(counter==quotes.length){
+            counter=0;
+          }
+
+       });
+    </script>
+  </body>
+</html>
